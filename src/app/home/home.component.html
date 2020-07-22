@@ -1,16 +1,18 @@
 <div class="container clolor-dark">
   <div class="col"><p>Add To Do Tasks</p></div>
-  <div class="col"><p>To Do Tasks Lists</p></div>
+  <div class="col"><p>To Do Tasks Lists ({{itemCount}})</p></div>
 </div>
-<div class="container clolor-light">
+<div class="container clolor-light" [@projects]="projects.length"> 
   <div class="col"><h2>Use this tool to add to do tasks and remove</h2>
   <form>
-    <input type="text" class="text" name="projectname" placeholder="Enter project name"/>
+    <input type="text" class="text" name="projectname" placeholder="Enter project name" [(ngModel)]="projectText"/>
     <br/>
-    <input type="submit" class="btn" name="btnAddtodoTask" value="Add To Do Task"/>
+    <input type="submit" class="btn" name="btnAddtodoTask" value="Add To Do Task" (click)="additems()"/>
   </form>
   
   </div>
   <div class="col">
-    <p class="project-container">Projects List</p></div>
+    <p class="project-container" *ngfor="let item of projects; let i=index" (click)="removeItems(i)" >{{item}}</p>
+   
+    </div>
 </div>
