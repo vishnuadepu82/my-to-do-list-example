@@ -1,5 +1,5 @@
 import { Component, VERSION } from '@angular/core';
-import {PersonserviceService} from './../personservice.service';d
+import {PersonserviceService} from './../personservice.service';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
